@@ -1,6 +1,6 @@
 import UIKit
 
-class ImagesListViewController: UIViewController {
+final class ImagesListViewController: UIViewController {
     
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
@@ -32,8 +32,8 @@ class ImagesListViewController: UIViewController {
         let currentDate = Date()
         cell.dateLabel.text = dateFormatter.string(from: currentDate)
         
-        let likeImage = indexPath.row % 2 == 0 ? "Active" : "No Active"
-        cell.likeButton.setImage(UIImage(named: likeImage), for: .normal)
+        let imageResource: ImageResource = indexPath.row % 2 == 0 ? .active : .noActive
+        cell.likeButton.setImage(UIImage(resource: imageResource), for: .normal)
     }
     
 }
