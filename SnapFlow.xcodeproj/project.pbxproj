@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		27AD4C402EC9C537003EEEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AD4C352EC9C537003EEEB7 /* Assets.xcassets */; };
+		27AD4C422EC9C537003EEEB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AD4C372EC9C537003EEEB7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		27A4637C2EC8A9CE00921822 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,24 +32,14 @@
 		27A463652EC8A9CD00921822 /* SnapFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A4637B2EC8A9CE00921822 /* SnapFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A463852EC8A9CE00921822 /* SnapFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27AD4C352EC9C537003EEEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27AD4C362EC9C537003EEEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27AD4C3B2EC9C537003EEEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		27A4638D2EC8A9CE00921822 /* Exceptions for "SnapFlow" folder in "SnapFlow" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 27A463642EC8A9CD00921822 /* SnapFlow */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		27A463672EC8A9CD00921822 /* SnapFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				27A4638D2EC8A9CE00921822 /* Exceptions for "SnapFlow" folder in "SnapFlow" target */,
-			);
 			path = SnapFlow;
 			sourceTree = "<group>";
 		};
@@ -88,6 +83,7 @@
 		27A4635C2EC8A9CD00921822 = {
 			isa = PBXGroup;
 			children = (
+				27AD4C4A2ECA00E4003EEEB7 /* Resources */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
 				27A4637E2EC8A9CE00921822 /* SnapFlowTests */,
 				27A463882EC8A9CE00921822 /* SnapFlowUITests */,
@@ -103,6 +99,16 @@
 				27A463852EC8A9CE00921822 /* SnapFlowUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		27AD4C4A2ECA00E4003EEEB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27AD4C372EC9C537003EEEB7 /* LaunchScreen.storyboard */,
+				27AD4C352EC9C537003EEEB7 /* Assets.xcassets */,
+				27AD4C362EC9C537003EEEB7 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AD4C402EC9C537003EEEB7 /* Assets.xcassets in Resources */,
+				27AD4C422EC9C537003EEEB7 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +289,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		27AD4C372EC9C537003EEEB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27AD4C3B2EC9C537003EEEB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		27A4638F2EC8A9CE00921822 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -291,13 +310,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D7UMJ5Z4YF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SnapFlow/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,13 +341,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D7UMJ5Z4YF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SnapFlow/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
