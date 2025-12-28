@@ -38,6 +38,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		272902DA2F01B6A400A3B4E3 /* Profile */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		27A463672EC8A9CD00921822 /* SnapFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SnapFlow;
@@ -83,6 +88,7 @@
 		27A4635C2EC8A9CD00921822 = {
 			isa = PBXGroup;
 			children = (
+				272902DA2F01B6A400A3B4E3 /* Profile */,
 				27AD4C4A2ECA00E4003EEEB7 /* Resources */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
 				27A4637E2EC8A9CE00921822 /* SnapFlowTests */,
@@ -127,6 +133,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				272902DA2F01B6A400A3B4E3 /* Profile */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
 			);
 			name = SnapFlow;
