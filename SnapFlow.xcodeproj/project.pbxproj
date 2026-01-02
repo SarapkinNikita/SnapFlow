@@ -43,6 +43,11 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		27A141E92F07D5F700BAA451 /* SingleImageView */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SingleImageView;
+			sourceTree = "<group>";
+		};
 		27A463672EC8A9CD00921822 /* SnapFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SnapFlow;
@@ -94,6 +99,7 @@
 				27A4637E2EC8A9CE00921822 /* SnapFlowTests */,
 				27A463882EC8A9CE00921822 /* SnapFlowUITests */,
 				27A463662EC8A9CD00921822 /* Products */,
+				27A141E92F07D5F700BAA451 /* SingleImageView */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +140,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				272902DA2F01B6A400A3B4E3 /* Profile */,
+				27A141E92F07D5F700BAA451 /* SingleImageView */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
 			);
 			name = SnapFlow;
