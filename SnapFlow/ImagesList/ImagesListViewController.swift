@@ -1,11 +1,10 @@
 import UIKit
 
 final class ImagesListViewController: UIViewController {
+    
+    //MARK: - Private Properties
     private let showSingleImageSegueIdentifier = "ShowSingleImage"
-    
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
-    
-    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -13,14 +12,17 @@ final class ImagesListViewController: UIViewController {
         return formatter
     }()
     
+    //MARK: - IBOutlet
     @IBOutlet private var tableView: UITableView!
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
     
+    //MARK: - Cell Setup
     func configCell(for cell: ImagesListCell, with indexPath: IndexPath) {
         let imageName = photosName[indexPath.row]
         
@@ -37,6 +39,7 @@ final class ImagesListViewController: UIViewController {
         cell.likeButton.setImage(UIImage(resource: imageResource), for: .normal)
     }
     
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == showSingleImageSegueIdentifier {
             guard
@@ -55,6 +58,7 @@ final class ImagesListViewController: UIViewController {
     }
 }
 
+//MARK: - TableView DataSource
 extension ImagesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         photosName.count
@@ -72,6 +76,7 @@ extension ImagesListViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - TableView Delegate
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(
