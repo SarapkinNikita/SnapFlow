@@ -3,10 +3,10 @@ import UIKit
 final class ProfileViewController: UIViewController {
     
     //MARK: - Privarte Properties
-    let profileImageView = UIImageView(image: UIImage(named: "avatar"))
-    let nameLabel = UILabel()
-    let loginLabel = UILabel()
-    let textLabel = UILabel()
+    private let profileImageView = UIImageView(image: UIImage(resource: .avatar))
+    private let nameLabel = UILabel()
+    private let loginLabel = UILabel()
+    private let textLabel = UILabel()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -69,7 +69,7 @@ final class ProfileViewController: UIViewController {
     
     private func setupLogoutButton() {
         let logoutButton = UIButton.systemButton(
-            with: UIImage(named: "Exit")!,
+            with: UIImage(resource: .exit),
             target: self,
             action: #selector(didTapLogoutButton)
         )
@@ -83,7 +83,6 @@ final class ProfileViewController: UIViewController {
             logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
-    
     
     //MARK: - Actions
     @objc private func didTapLogoutButton() {
