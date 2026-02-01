@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		27AD4C402EC9C537003EEEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AD4C352EC9C537003EEEB7 /* Assets.xcassets */; };
 		27AD4C422EC9C537003EEEB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AD4C372EC9C537003EEEB7 /* LaunchScreen.storyboard */; };
+		27BEEB5E2F27DFE70021FE34 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEEB5C2F27DFD90021FE34 /* AuthViewController.swift */; };
+		27BEEB652F27E26D0021FE34 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEEB642F27E2690021FE34 /* WebViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +37,19 @@
 		27AD4C352EC9C537003EEEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27AD4C362EC9C537003EEEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27AD4C3B2EC9C537003EEEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27BEEB5C2F27DFD90021FE34 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		27BEEB642F27E2690021FE34 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		272902DA2F01B6A400A3B4E3 /* Profile */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		274F4EFB2F26280700E7F89D /* SupportingFiles */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		27A141E92F07D5F700BAA451 /* SingleImageView */ = {
@@ -93,6 +102,8 @@
 		27A4635C2EC8A9CD00921822 = {
 			isa = PBXGroup;
 			children = (
+				27BEEB622F27E1A50021FE34 /* Auth */,
+				274F4EFB2F26280700E7F89D /* SupportingFiles */,
 				272902DA2F01B6A400A3B4E3 /* Profile */,
 				27AD4C4A2ECA00E4003EEEB7 /* Resources */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
@@ -123,6 +134,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		27BEEB622F27E1A50021FE34 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				27BEEB642F27E2690021FE34 /* WebViewViewController.swift */,
+				27BEEB5C2F27DFD90021FE34 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +160,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				272902DA2F01B6A400A3B4E3 /* Profile */,
+				274F4EFB2F26280700E7F89D /* SupportingFiles */,
 				27A141E92F07D5F700BAA451 /* SingleImageView */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
 			);
@@ -271,6 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BEEB5E2F27DFE70021FE34 /* AuthViewController.swift in Sources */,
+				27BEEB652F27E26D0021FE34 /* WebViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
