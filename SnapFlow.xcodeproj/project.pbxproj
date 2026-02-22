@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271984952F4210E6003D5545 /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271984942F4210E5003D5545 /* OAuth2TokenStorage.swift */; };
+		2725245D2F3E6B1C0017E9DE /* URLSession+data.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27904CFD2F38D12100ECB598 /* URLSession+data.swift.swift */; };
+		2725245E2F3E6B2A0017E9DE /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27904D002F38EE4100ECB598 /* OAuth2Service.swift */; };
+		2725245F2F3E6B3A0017E9DE /* OAuthTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27904CFF2F38E5D600ECB598 /* OAuthTokenResponse.swift */; };
 		27AD4C402EC9C537003EEEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AD4C352EC9C537003EEEB7 /* Assets.xcassets */; };
 		27AD4C422EC9C537003EEEB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AD4C372EC9C537003EEEB7 /* LaunchScreen.storyboard */; };
 		27BEEB5E2F27DFE70021FE34 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BEEB5C2F27DFD90021FE34 /* AuthViewController.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271984942F4210E5003D5545 /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
+		27904CFD2F38D12100ECB598 /* URLSession+data.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+data.swift.swift"; sourceTree = "<group>"; };
+		27904CFF2F38E5D600ECB598 /* OAuthTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthTokenResponse.swift; sourceTree = "<group>"; };
+		27904D002F38EE4100ECB598 /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
 		27A463652EC8A9CD00921822 /* SnapFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A4637B2EC8A9CE00921822 /* SnapFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A463852EC8A9CE00921822 /* SnapFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +80,11 @@
 			path = SnapFlowUITests;
 			sourceTree = "<group>";
 		};
+		27AF4A312F4A3079008CBDE0 /* SplashViewController */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SplashViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +112,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27904CFC2F38D0EE00ECB598 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				271984942F4210E5003D5545 /* OAuth2TokenStorage.swift */,
+				27904D002F38EE4100ECB598 /* OAuth2Service.swift */,
+				27904CFD2F38D12100ECB598 /* URLSession+data.swift.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		27904CFE2F38E5CC00ECB598 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27904CFF2F38E5D600ECB598 /* OAuthTokenResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		27A4635C2EC8A9CD00921822 = {
 			isa = PBXGroup;
 			children = (
+				27AF4A312F4A3079008CBDE0 /* SplashViewController */,
+				27904CFE2F38E5CC00ECB598 /* Models */,
+				27904CFC2F38D0EE00ECB598 /* Services */,
 				27BEEB622F27E1A50021FE34 /* Auth */,
 				274F4EFB2F26280700E7F89D /* SupportingFiles */,
 				272902DA2F01B6A400A3B4E3 /* Profile */,
@@ -163,6 +197,7 @@
 				274F4EFB2F26280700E7F89D /* SupportingFiles */,
 				27A141E92F07D5F700BAA451 /* SingleImageView */,
 				27A463672EC8A9CD00921822 /* SnapFlow */,
+				27AF4A312F4A3079008CBDE0 /* SplashViewController */,
 			);
 			name = SnapFlow;
 			packageProductDependencies = (
@@ -293,7 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BEEB5E2F27DFE70021FE34 /* AuthViewController.swift in Sources */,
+				2725245F2F3E6B3A0017E9DE /* OAuthTokenResponse.swift in Sources */,
+				2725245E2F3E6B2A0017E9DE /* OAuth2Service.swift in Sources */,
 				27BEEB652F27E26D0021FE34 /* WebViewViewController.swift in Sources */,
+				2725245D2F3E6B1C0017E9DE /* URLSession+data.swift.swift in Sources */,
+				271984952F4210E6003D5545 /* OAuth2TokenStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

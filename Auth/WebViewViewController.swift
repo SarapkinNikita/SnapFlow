@@ -3,7 +3,7 @@ import WebKit
 
 // MARK: - WebViewViewControllerDelegate
 protocol WebViewViewControllerDelegate: AnyObject {
-    func webViewController(
+    func webViewViewController(
         _ vc: WebViewViewController,
         didAuthenticateWithCode code: String
     )
@@ -21,15 +21,41 @@ final class WebViewViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     // MARK: - Public Properties
     weak var delegate: WebViewViewControllerDelegate?
+    
+    // MARK: - KVO
+    override func observeValue(
+        forKeyPath keyPath: String?,
+        of object: Any?,
+        change: [NSKeyValueChangeKey : Any]?,
+        context: UnsafeMutableRawPointer?
+    ) {
+        if keyPath == #keyPath(WKWebView.estimatedProgress) {
+            updateProgress()
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+    
+    private func updateProgress() {
+        progressView.progress = Float(webView.estimatedProgress)
+        progressView.isHidden = fabs(webView.estimatedProgress - 1) < 0.001
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadAuthView()
         webView.navigationDelegate = self
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,6 +64,11 @@ final class WebViewViewController: UIViewController {
         if isMovingFromParent {
             delegate?.webViewViewControllerDidCancel(self)
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
     }
     
     // MARK: - Private Methods
@@ -70,13 +101,12 @@ extension WebViewViewController: WKNavigationDelegate {
         decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
     ) {
         if let code = code(from: navigationAction) {
-            delegate?.webViewController(self, didAuthenticateWithCode: code)
+            delegate?.webViewViewController(self, didAuthenticateWithCode: code)
             decisionHandler(.cancel)
         } else {
             decisionHandler(.allow)
         }
     }
-    
     
     private func code(from navigationAction: WKNavigationAction) -> String? {
         if

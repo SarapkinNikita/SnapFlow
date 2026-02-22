@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2CH-7x-fuP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l8I-gR-lly">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -120,7 +120,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="El7-yZ-3Vc">
             <objects>
-                <tabBarController id="NJi-ST-k6B" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="NJi-ST-k6B" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="trh-3V-kpW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -283,8 +283,9 @@ To share</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2CH-7x-fuP" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Yp6-N3-pEd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QQR-XS-1nF">
-                        <rect key="frame" x="0.0" y="62" width="402" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -305,25 +306,33 @@ To share</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-uA-vgr">
-                                <rect key="frame" x="0.0" y="106" width="402" height="768"/>
+                                <rect key="frame" x="0.0" y="44" width="402" height="830"/>
                                 <color key="backgroundColor" name="YP White (iOS)"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WDs-nK-lmg">
+                                <rect key="frame" x="0.0" y="44" width="402" height="4"/>
+                                <color key="progressTintColor" name="YP Black (iOS)"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yhr-5f-qHJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tRK-uA-vgr" firstAttribute="trailing" secondItem="UtW-WS-LmW" secondAttribute="trailing" id="4HC-5P-NyJ"/>
+                            <constraint firstItem="WDs-nK-lmg" firstAttribute="top" secondItem="Yhr-5f-qHJ" secondAttribute="top" id="8NA-hs-AAE"/>
                             <constraint firstItem="tRK-uA-vgr" firstAttribute="leading" secondItem="UtW-WS-LmW" secondAttribute="leading" id="IzX-wL-akX"/>
                             <constraint firstItem="tRK-uA-vgr" firstAttribute="top" secondItem="Yhr-5f-qHJ" secondAttribute="top" id="doD-aP-5MC"/>
                             <constraint firstItem="tRK-uA-vgr" firstAttribute="bottom" secondItem="UtW-WS-LmW" secondAttribute="bottom" id="imD-C8-1xX"/>
+                            <constraint firstItem="Yhr-5f-qHJ" firstAttribute="trailing" secondItem="WDs-nK-lmg" secondAttribute="trailing" id="nqw-8K-4B4"/>
+                            <constraint firstItem="WDs-nK-lmg" firstAttribute="leading" secondItem="Yhr-5f-qHJ" secondAttribute="leading" id="uDW-aA-5WK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a7C-HN-vpA"/>
                     <connections>
+                        <outlet property="progressView" destination="WDs-nK-lmg" id="feu-IY-DZA"/>
                         <outlet property="webView" destination="tRK-uA-vgr" id="QP1-3U-FOX"/>
                     </connections>
                 </viewController>
@@ -331,10 +340,43 @@ To share</string>
             </objects>
             <point key="canvasLocation" x="-1318" y="14"/>
         </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="KQI-G7-ddp">
+            <objects>
+                <viewController id="l8I-gR-lly" customClass="SplashViewController" customModule="SnapFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uus-Tm-UQf">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="rDc-Dp-33U">
+                                <rect key="frame" x="164" y="399" width="75" height="77"/>
+                                <color key="backgroundColor" name="YP Black (iOS)"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="R3X-pR-2Z8"/>
+                                    <constraint firstAttribute="height" constant="77" id="rC0-eV-sFz"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q5m-al-iOd"/>
+                        <color key="backgroundColor" name="YP Black (iOS)"/>
+                        <constraints>
+                            <constraint firstItem="rDc-Dp-33U" firstAttribute="leading" secondItem="q5m-al-iOd" secondAttribute="leading" constant="164" id="VmR-pb-UKd"/>
+                            <constraint firstItem="rDc-Dp-33U" firstAttribute="top" secondItem="q5m-al-iOd" secondAttribute="top" constant="337" id="ugf-WR-YSl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="2CH-7x-fuP" kind="presentation" identifier="showAuthenticationScreen" modalPresentationStyle="fullScreen" id="q9U-N7-V3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KxE-jk-Wif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3934" y="14"/>
+        </scene>
     </scenes>
     <resources>
         <image name="0" width="1600" height="1059"/>
         <image name="Backward" width="24" height="24"/>
+        <image name="LaunchScreen" width="74" height="77"/>
         <image name="Logo_of_Unsplash" width="60" height="60"/>
         <image name="Scroll View No Active" width="51" height="51"/>
         <image name="Sharing" width="50" height="50"/>
