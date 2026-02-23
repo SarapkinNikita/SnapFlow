@@ -1,7 +1,7 @@
 import UIKit
 
 protocol OAuth2ServiceProtocol {
-    func fetchOAuthToken(code: String,
+    func fetchAuthToken(code: String,
                          completion: @escaping (Result<String, Error>) -> Void)
 }
 
@@ -37,7 +37,7 @@ final class OAuth2Service: OAuth2ServiceProtocol {
         return request
     }
     // MARK: - Public Methods
-    func fetchOAuthToken(code: String,
+    func fetchAuthToken(code: String,
                          completion: @escaping (Result<String, Error>) -> Void) {
         guard let request = makeOAuthTokenRequest(code: code) else {
             print("Failed to create OAuth token request")
@@ -50,7 +50,7 @@ final class OAuth2Service: OAuth2ServiceProtocol {
             switch result {
             case .success(let data):
                 do {
-                    let token = try JSONDecoder().decode(OAuthTokenResponse.self, from: data)
+                    let token = try JSONDecoder().decode(OAuthTokenResponseBody.self, from: data)
                     let storage = OAuth2TokenStorage()
                     storage.token = token.accessToken
                     completion(.success(token.accessToken))
